@@ -1,5 +1,43 @@
 {
     "name": "hanoivip/platform",
     "type": "library",
-    "require": {}
+	"repositories" : [
+		{
+			"type" : "path",
+			"url" : "../game",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../payment-client",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../events",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../user-bag",
+			"options" : {
+				"symlink" : true
+			}
+		}
+	],
+	"require" : {
+		"php" : ">=7.0.0",
+		"hanoivip/game" : "dev-master",
+		"hanoivip/payment-client" : "dev-master",
+		"hanoivip/events" : "dev-master",
+		"hanoivip/user-bag" : "dev-master"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Hanoivip\\Platform\\" : "src/"
+		}
+	}
 }

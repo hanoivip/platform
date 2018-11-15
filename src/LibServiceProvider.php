@@ -1,6 +1,6 @@
 <?php
 
-namespace Hanoivip\Activity;
+namespace Hanoivip\Platform;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -8,6 +8,7 @@ class LibServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        /*
         $this->publishes([
             __DIR__.'/../views' => resource_path('views/vendor/hanoivip'),
         ]);
@@ -17,6 +18,7 @@ class LibServiceProvider extends ServiceProvider
         
         $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        */
     }
     
     public function register()

@@ -4,6 +4,8 @@ namespace Hanoivip\Platform\Contracts;
 
 interface IPlatform
 {
+    public function getName();
+    
     public function sendCoin($coinType, $coinNum, $role = null);
     
     public function sendBox($boxId, $boxCount = 1, $role = null);
