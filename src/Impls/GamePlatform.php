@@ -53,11 +53,6 @@ class GamePlatform implements IPlatform
     public function getInfos($user)
     {}
 
-    public function subCoin($user, $coinType, $coinNum, $role = null)
-    {
-        Log::error("GamePlatform not support substract coin from character");
-    }
-
     public function sendCoin($user, $coinType, $coinNum, $role = null)
     {
         $user = Auth::user();

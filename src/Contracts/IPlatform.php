@@ -15,6 +15,4 @@ interface IPlatform
     public function getInfos($user);
     
     public function supportMultiRoles();
-    
-    public function subCoin($user, $coinType, $coinNum, $role = null);
 }

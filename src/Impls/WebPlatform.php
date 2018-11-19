@@ -40,11 +40,6 @@ class WebPlatform implements IPlatform
     public function getInfos($user)
     {}
 
-    public function subCoin($user, $coinType, $coinNum, $role = null)
-    {
-        Log::error("WebPlatform not support substract coin from character");
-    }
-
     public function sendCoin($user, $coinType, $coinNum, $role = null)
     {
         $user = Auth::user();
