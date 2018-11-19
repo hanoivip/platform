@@ -25,29 +25,33 @@ class WebPlatform implements IPlatform
         $this->bagUtil = $bagUtil;
     }
     
-    public function sendBox($boxId, $boxCount = 1, $role = null)
-    {}
+    public function sendBox($user, $boxId, $boxCount = 1, $role = null)
+    {
+        $user = Auth::user();
+        $this->bag = $this->bagUtil->getUserBag($user->getAuthIdentifier());
+        $this->bag->addItem($boxId, $boxCount);
+    }
 
     public function supportMultiRoles()
     {
         return false;
     }
 
-    public function getInfos()
+    public function getInfos($user)
     {}
 
-    public function subCoin($coinType, $coinNum, $role = null)
+    public function subCoin($user, $coinType, $coinNum, $role = null)
     {
         Log::error("WebPlatform not support substract coin from character");
     }
 
-    public function sendCoin($coinType, $coinNum, $role = null)
+    public function sendCoin($user, $coinType, $coinNum, $role = null)
     {
         $user = Auth::user();
         $this->balance->add($user->getAuthIdentifier(), $coinNum, "WebPlatform", $coinType);
     }
 
-    public function sendItem($itemId, $itemCount, $role = null)
+    public function sendItem($user, $itemId, $itemCount, $role = null)
     {
         $user = Auth::user();
         $this->bag = $this->bagUtil->getUserBag($user->getAuthIdentifier());

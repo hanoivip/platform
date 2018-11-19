@@ -6,15 +6,15 @@ interface IPlatform
 {
     public function getName();
     
-    public function sendCoin($coinType, $coinNum, $role = null);
+    public function sendCoin($user, $coinType, $coinNum, $role = null);
     
-    public function sendBox($boxId, $boxCount = 1, $role = null);
+    public function sendBox($user, $boxId, $boxCount = 1, $role = null);
     
-    public function sendItem($itemId, $itemCount, $role = null);
+    public function sendItem($user, $itemId, $itemCount, $role = null);
     
-    public function getInfos();
+    public function getInfos($user);
     
     public function supportMultiRoles();
     
-    public function subCoin($coinType, $coinNum, $role = null);
+    public function subCoin($user, $coinType, $coinNum, $role = null);
 }

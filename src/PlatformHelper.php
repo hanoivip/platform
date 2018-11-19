@@ -45,12 +45,25 @@ class PlatformHelper
      * 
      * @param IPlatform $platform
      * @param Authenticatable $user
-     * @param array $reward type, id, amount
+     * @param array $reward Array of type, id, amount
      */
-    public function sendReward(IPlatform $platform, $user, $reward)
+    public function sendReward(IPlatform $platform, $user, $reward, $reason, $role = null)
     {
         Log::debug("Platform request to send reward to platform ..");
-        Log::debug("Platform name:" . $platform->getName());
-        Log::debug("Platform reward:" . print_r($reward, true));
+        $type = $reward['type'];
+        $id = $reward['id'];
+        $count = $reward['count'];
+        switch ($type)
+        {
+            case 'Items':
+                $platform->sendItem($user, $id, $count, $role);
+                break;
+            case 'Balance':
+                $platform->sendCoin($user, $id, $count, $role);
+                break;
+            case 'Box':
+                $platform->sendBox($user, $id, $count, $role);
+                break;
+        }
     }
 }
