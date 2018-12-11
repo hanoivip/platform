@@ -38,7 +38,9 @@ class WebPlatform implements IPlatform
     }
 
     public function getInfos($user)
-    {}
+    {
+        return [$user->getAuthIdentifier() => $user->getAuthIdentifierName()];
+    }
 
     public function sendCoin($user, $coinType, $coinNum, $role = null)
     {

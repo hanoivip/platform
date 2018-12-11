@@ -51,7 +51,9 @@ class GamePlatform implements IPlatform
     }
 
     public function getInfos($user)
-    {}
+    {
+        return $this->game->queryRoles($user, $this->target);
+    }
 
     public function sendCoin($user, $coinType, $coinNum, $role = null)
     {
