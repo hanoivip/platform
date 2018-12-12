@@ -11,10 +11,6 @@ interface IPlatform
     public function sendBox($user, $boxId, $boxCount = 1, $role = null);
     /**
      * 
-     * @param unknown $user
-     * @param unknown $itemId
-     * @param unknown $itemCount
-     * @param unknown $role
      * @return boolean
      */
     public function sendItem($user, $itemId, $itemCount, $role = null);
