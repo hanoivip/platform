@@ -25,7 +25,7 @@ class PlatformHelper
     
     /**
      * web: for web platform
-     * game:s1, game:s2...: for game platform
+     * game: s1,s2... for game platform
      * 
      * @param string $name
      * @return IPlatform

@@ -45,14 +45,14 @@ class WebPlatform implements IPlatform
     public function sendCoin($user, $coinType, $coinNum, $role = null)
     {
         $user = Auth::user();
-        $this->balance->add($user->getAuthIdentifier(), $coinNum, "WebPlatform", $coinType);
+        return $this->balance->add($user->getAuthIdentifier(), $coinNum, "WebPlatform", $coinType);
     }
 
     public function sendItem($user, $itemId, $itemCount, $role = null)
     {
         $user = Auth::user();
         $this->bag = $this->bagUtil->getUserBag($user->getAuthIdentifier());
-        $this->bag->addItem($itemId, $itemCount);
+        return $this->bag->addItem($itemId, $itemCount);
     }
     
     public function getName()
